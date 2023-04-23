@@ -1,5 +1,7 @@
+<?php include('../models/ModelRegister.php')?>
+<?php include('../controllers/ControllerRegister.php')?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -48,7 +50,7 @@
                         </div>
 
                         <select class="form-select mb-3" name="pol">
-                            <option value="">Выберите пол</option>
+                            <option value="2">Выберите пол</option>
                             <option value="0">Женский</option>
                             <option value="1">Мужской</option>
                             <option value="2">Не указывать</option>
@@ -65,6 +67,11 @@
                         </div>
 
                         <div class="form-floating mb-3">
+                            <input class="form-control" name="jobRole" type="text" required>
+                            <label for="jobRole">Должность</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
                             <input class="form-control" name="birthDate" type="date" min="1900-01-01" max="2006-01-01" required>
                             <label for="birthDate">Дата рождения</label>
                         </div>
@@ -75,8 +82,10 @@
                         </div>
 
 
-
-                        <div class="d-grid"><button class="btn btn-success btn-lg" id="submitButton" type="submit">Отправить</button></div>
+                        <div class="d-grid">
+                            <button class="btn btn-success btn-lg" id="submitButton" type="submit" name="submitButton">Отправить</button>
+                            <p><?php echo $errorMessage;?></p>
+                        </div>
                     </form>
                 </div>
             </div>
