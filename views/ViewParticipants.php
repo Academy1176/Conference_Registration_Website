@@ -54,14 +54,14 @@
                                 //Если есть участники, вывести информацию
                                 if ($participantsArray != 0){
                                     $i = 1;
-                                    print_r($participantsArray);
+                                    
                                     ?>
                                         <?php
                                         foreach ($participantsArray as $row) {
                                         ?>
                                             <tr>
                                                 <th scope="row"><?php echo $i?></th>
-                                                <td><?php echo $row['name'], $row['family'];?></td>
+                                                <td><?php echo $row['name'], " ", $row['family'];?></td>
                                                 <td><?php echo $row['company']?></td>
                                                 <td id="<?php echo $row['email']?>">
                                                     <a href="mailto:<?php echo $row['email']?>">
