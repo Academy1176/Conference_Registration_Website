@@ -1,7 +1,7 @@
 <?php 
 
 //Добавить нового участника в базу данных
-function addNewParticipant($name, $family, $pol, $nationality, $company, $jobRole, $birthDate, $email){
+function ModelRegister_AddNewParticipant($name, $family, $pol, $nationality, $company, $jobRole, $birthDate, $email){
     try {
     	//Создание соединения
         $conn = new PDO("mysql:host=localhost;dbname=conference_db", "root", "");

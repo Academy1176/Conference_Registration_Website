@@ -17,7 +17,8 @@ if (isset($_POST['submitButton'])) {
         $jobRole = $_POST['jobRole'];
         $birthDate = $_POST['birthDate'];
         $email = $_POST['email'];
-        addNewParticipant($name, $family, $pol, $nationality, $company, $jobRole, $birthDate, $email);   
+        //Передача данных в модель
+        ModelRegister_AddNewParticipant($name, $family, $pol, $nationality, $company, $jobRole, $birthDate, $email);   
     }
 }
 ?>

@@ -72,7 +72,7 @@
                         </div>
 
                         <div class="form-floating mb-3">
-                            <input class="form-control" name="birthDate" type="date" min="1900-01-01" max="2006-01-01" required>
+                            <input class="form-control" name="birthDate" type="date" min="1900-01-01" max="2005-12-01" required>
                             <label for="birthDate">Дата рождения</label>
                         </div>
 

@@ -1,5 +1,8 @@
+<?php include('../models/ModelParticipants.php')?>
+<?php include('../controllers/ControllerParticipants.php')?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -47,24 +50,39 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                            <th scope="row">1</th>
-                            <td>Олег Павлов</td>
-                            <td>Otto</td>
-                            <td><a href="mailto:mail@example.ru">mail@example.ru</td>
-                            </tr>
-                            <tr>
-                            <th scope="row">2</th>
-                            <td>Анна Соколова</td>
-                            <td>Thornton</td>
-                            <td><a href="mailto:mail2@example.ru">mail2@example.ru</td>
-                            </tr>
-                            <tr>
-                            <th scope="row">3</th>
-                            <td>Михаил Леонтьев</td>
-                            <td>the Bird</td>
-                            <td><a href="mailto:mail3@example.ru">mail3@example.ru</td>
-                            </tr>
+                            <?php
+                                //Если есть участники, вывести информацию
+                                if ($participantsArray != 0){
+                                    $i = 1;
+                                    print_r($participantsArray);
+                                    ?>
+                                        <?php
+                                        foreach ($participantsArray as $row) {
+                                        ?>
+                                            <tr>
+                                                <th scope="row"><?php echo $i?></th>
+                                                <td><?php echo $row['name'], $row['family'];?></td>
+                                                <td><?php echo $row['company']?></td>
+                                                <td id="<?php echo $row['email']?>">
+                                                    <a href="mailto:<?php echo $row['email']?>">
+                                                        <?php echo $row['email']?>
+                                                    </a>    
+                                                </td>
+                                            </tr>
+                                        <?php
+                                        $i++;
+                                        }    
+                                }
+                                //Иначе вывести сообщение, что участников нет
+                                else{
+                                    ?>
+                                    <td></td>
+                                    <td>Участников нет</td>
+                                    <td></td>
+                                    <td></td>
+                                    <?php
+                                }
+                            ?>
                         </tbody>
                     </table>
                 </div>
